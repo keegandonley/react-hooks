@@ -1,28 +1,35 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
+import UseStateComponent from './demos/useStateComponent';
+import UseEffectCleanup from './demos/useEffectCleanup';
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+function App() {
+  return (
+    <div className="App">
+      <div className="App-header">
+        <span>
+          This site was built using: 
+          <div className="row">
+            <div className="version">
+              react<br />{React.version}
+            </div>
+            <div className="version">
+              create-react-app<br />{process.env.REACT_APP_VERSION}
+            </div>
+          </div>
+          <br />
+          It is built without using any classes and relies only on <a href="https://reactjs.org/docs/hooks-intro.html">hooks</a>
+          <br />
+          <br />
+          <small>
+            (Some code examples have had non-essential code simplified or removed, such as link urls)
+          </small>
+        </span>
       </div>
-    );
-  }
+      <UseStateComponent />
+      <UseEffectCleanup />
+    </div>
+  );
 }
 
 export default App;
